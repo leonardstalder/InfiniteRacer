@@ -9,8 +9,6 @@ public class PlayerBehaviour : MonoBehaviour {
 	public float maxSpeed;
 	public float acceleration;
 	public float deceleration;
-	private Transform camera;
-	
 	
 	// Use this for initialization
 	void Start () {

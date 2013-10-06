@@ -1,0 +1,62 @@
+using UnityEngine;
+using System.Collections;
+
+public class NavigationController : MonoBehaviour {
+	
+	public static float blockSize=400f;
+	public static float speed=160f;
+	public float acceleration=1f;
+	
+	private Transform[] blocks;
+	private int blockIndex=0;
+
+	public Transform blockPrefab;
+	public Transform obstacleUPrefab;
+	public Transform obstacleDPrefab;
+	
+	private float lastObstacleTime;
+	
+	void SpawnBlocks(){
+		if(blocks[blockIndex].position.z<-blockSize/2){
+			Vector3 tubePosition=blocks[blockIndex].position;
+			Destroy(blocks[blockIndex].gameObject);
+			blocks[blockIndex]=Instantiate(blockPrefab, tubePosition + new Vector3(0, 0, blocks.Length*blockSize), blockPrefab.rotation) as Transform;
+			blocks[blockIndex].gameObject.AddComponent<NavigationBehaviour>();
+			blocks[blockIndex].parent=transform;
+			blockIndex=(blockIndex+1)%blocks.Length;
+		}
+	}
+	
+	void SpawnObstacles(){
+		if (Time.time-lastObstacleTime>1f){	
+			lastObstacleTime=Time.time;
+			Transform obstacle;
+			if(Random.value<0.5f)
+				obstacle=Instantiate(obstacleUPrefab, obstacleUPrefab.position + new Vector3(0, 0, blocks.Length*blockSize), obstacleUPrefab.rotation) as Transform;
+			else
+				obstacle=Instantiate(obstacleDPrefab, obstacleDPrefab.position + new Vector3(0, 0, blocks.Length*blockSize), obstacleDPrefab.rotation) as Transform;
+			
+			obstacle.gameObject.AddComponent<ObstacleBehaviour>();
+			obstacle.parent=transform;
+		}
+		
+	}
+	
+	void Start(){
+		blocks=new Transform[6];
+		for(int i=0; i<blocks.Length; i++){
+			blocks[i]=Instantiate (blockPrefab, new Vector3(0f, 0f, i*blockSize), blockPrefab.rotation) as Transform;
+			blocks[i].gameObject.AddComponent<NavigationBehaviour>();
+			blocks[i].parent=transform;
+		}
+		lastObstacleTime=Time.time;
+	}
+	
+	
+	// Update is called once per frame
+	void Update () {
+		SpawnBlocks();
+		SpawnObstacles();
+	}
+	
+}

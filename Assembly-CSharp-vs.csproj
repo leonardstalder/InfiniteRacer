@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\NavigationBehaviour.cs" />
+     <Compile Include="Assets\Scripts\NavigationController.cs" />
+     <Compile Include="Assets\Scripts\ObstacleBehaviour.cs" />
      <Compile Include="Assets\Scripts\PlayerBehaviour.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
