@@ -9,7 +9,7 @@ public class ObstacleBehaviour : NavigationBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	protected override void Update () {
 		base.Update();
 		if(transform.position.z<0f)
 			Destroy(gameObject);

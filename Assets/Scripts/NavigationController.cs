@@ -5,7 +5,7 @@ public class NavigationController : MonoBehaviour {
 	
 	public static float blockSize=400f;
 	public static float speed=160f;
-	public float acceleration=1f;
+	//public static float acceleration=1f;
 	
 	private Transform[] blocks;
 	private int blockIndex=0;
@@ -16,7 +16,7 @@ public class NavigationController : MonoBehaviour {
 	
 	private float lastObstacleTime;
 	
-	void SpawnBlocks(){
+	void RespawnBlocks(){
 		if(blocks[blockIndex].position.z<-blockSize/2){
 			Vector3 tubePosition=blocks[blockIndex].position;
 			Destroy(blocks[blockIndex].gameObject);
@@ -55,8 +55,11 @@ public class NavigationController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		SpawnBlocks();
 		SpawnObstacles();
+	}
+	
+	void LateUpdate(){
+		RespawnBlocks();
 	}
 	
 }

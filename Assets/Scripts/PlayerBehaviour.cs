@@ -3,16 +3,18 @@ using System.Collections;
 
 public class PlayerBehaviour : MonoBehaviour {
 
-	public float radius=5f;
-	private float relativePlayerPosition=0f;
-	public float speed;
-	public float maxSpeed;
-	public float acceleration;
-	public float deceleration;
+	public float radius=12f;
+	public float depth=12;
+	public float cameraRadius=6f;
+	private float speed=0f;
+	public float maxSpeed=2f;
+	public float acceleration=1f;
+	public float deceleration=1f;
 	
 	// Use this for initialization
 	void Start () {
-		
+		transform.position=new Vector3(0,-radius,depth);
+		Camera.main.transform.position=Vector3.down*cameraRadius;
 	}
 	
 	// Update is called once per frame
@@ -30,11 +32,14 @@ public class PlayerBehaviour : MonoBehaviour {
 			else
 				speed = 0;
 		}
-		relativePlayerPosition+=speed * Time.deltaTime;
+		
+		float motion=speed * Time.deltaTime;
 		
 		//better use rotate around API
-		transform.position=new Vector3(Mathf.Sin(relativePlayerPosition*Mathf.PI)*radius,-Mathf.Cos(relativePlayerPosition*Mathf.PI)*radius,transform.position.z);
-		Camera.main.transform.localEulerAngles=Vector3.forward*relativePlayerPosition*180;
+		//transform.position=new Vector3(Mathf.Sin(relativePlayerPosition*Mathf.PI)*radius,-Mathf.Cos(relativePlayerPosition*Mathf.PI)*radius,transform.position.z);
+		transform.RotateAround (Vector3.zero, Vector3.forward, motion * 360);
+		
+		Camera.main.transform.transform.RotateAround (Vector3.zero, Vector3.forward, motion * 360);
 	}
 		
 }
