@@ -13,6 +13,8 @@ public class NavigationController : MonoBehaviour {
 	public Transform blockPrefab;
 	public Transform obstacleUPrefab;
 	public Transform obstacleDPrefab;
+	public Transform obstacleMPrefab;
+
 	
 	private float lastObstacleTime;
 	
@@ -31,11 +33,15 @@ public class NavigationController : MonoBehaviour {
 		if (Time.time-lastObstacleTime>1f){	
 			lastObstacleTime=Time.time;
 			Transform obstacle;
-			if(Random.value<0.5f)
+			float randval=Random.value;
+			if(randval<1/3f)
 				obstacle=Instantiate(obstacleUPrefab, obstacleUPrefab.position + new Vector3(0, 0, blocks.Length*blockSize), obstacleUPrefab.rotation) as Transform;
-			else
-				obstacle=Instantiate(obstacleDPrefab, obstacleDPrefab.position + new Vector3(0, 0, blocks.Length*blockSize), obstacleDPrefab.rotation) as Transform;
-			
+			else{
+				if (randval<2/3f)
+					obstacle=Instantiate(obstacleDPrefab, obstacleDPrefab.position + new Vector3(0, 0, blocks.Length*blockSize), obstacleDPrefab.rotation) as Transform;
+				else
+					obstacle=Instantiate(obstacleMPrefab, obstacleMPrefab.position + new Vector3(0, 0, blocks.Length*blockSize), obstacleMPrefab.rotation) as Transform;
+			}
 			obstacle.gameObject.AddComponent<ObstacleBehaviour>();
 			obstacle.parent=transform;
 		}
