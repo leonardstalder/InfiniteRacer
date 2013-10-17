@@ -9,7 +9,7 @@ using System.Collections;
 // Description : class to handle all animations of the ship.
 // ------------------------------------------------------------------
 
-public class Ship_Animation : MonoBehaviour {
+public class ShipAnimation : MonoBehaviour {
 	
 	// --------------------------------------------------------------
 	// Variables.

@@ -19,7 +19,7 @@ public class NavigationController : MonoBehaviour {
 	private float lastObstacleTime;
 	
 	void RespawnBlocks(){
-		if(blocks[blockIndex].position.z<-blockSize/2){
+		if(blocks[blockIndex].position.z<-blockSize){
 			Vector3 tubePosition=blocks[blockIndex].position;
 			Destroy(blocks[blockIndex].gameObject);
 			blocks[blockIndex]=Instantiate(blockPrefab, tubePosition + new Vector3(0, 0, blocks.Length*blockSize), blockPrefab.rotation) as Transform;

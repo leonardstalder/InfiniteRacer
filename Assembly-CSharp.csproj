@@ -50,6 +50,9 @@
      <Compile Include="Assets\Scripts\ObstacleBehaviour.cs" />
      <Compile Include="Assets\Scripts\PlayerBehaviour.cs" />
      <Compile Include="Assets\Scripts\Ship_Animation.cs" />
+     <Compile Include="Assets\Scripts\Splines\MathUtils.cs" />
+     <Compile Include="Assets\Scripts\Splines\SplineController.cs" />
+     <Compile Include="Assets\Scripts\Splines\SplineInterpolator.cs" />
      <None Include="Assets\Hard Surface Free\HardSurface Shaders\HardSurfacePro Hidden Front Cut Out Specular.shader" />
      <None Include="Assets\Hard Surface Free\HardSurface Shaders\HardSurface Free Cut Out Opaque Bump.shader" />
      <None Include="Assets\Hard Surface Free\HardSurface Shaders\HardSurfacePro Hidden Front Transparent.shader" />
