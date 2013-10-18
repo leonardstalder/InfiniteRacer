@@ -16,13 +16,8 @@ public class ShipAnimation : MonoBehaviour {
 	// --------------------------------------------------------------
 	
 	// Game Objects.
-	private GameObject ship;
 	private GameObject propellerLeft;
 	private GameObject propellerRight;
-	private GameObject wingLeft;
-	private GameObject wingRight;
-	
-	public float smoothing = 0.15f;
 	
 	// --------------------------------------------------------------
 	// Update.
@@ -31,28 +26,15 @@ public class ShipAnimation : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{		
-		// Get ship object.
-		ship = GameObject.Find("Ship");
-		
 		// Get propeller objects.
 		propellerLeft = GameObject.Find("PropellerLeft");
 		propellerRight = GameObject.Find("PropellerRight");
-		
-		// Get wing objects.
-		wingLeft = GameObject.Find("WingLeft");
-		wingRight = GameObject.Find("WingRight");
 	}
 	
 	// Update is called once per frame.
 	void Update ()
 	{
 		rotatePropellers(); 	// Rotate the propellers.
-		
-		// Get user input.
-		if(Input.GetKey(KeyCode.LeftArrow))
-		{
-            
-		}
 	}
 	
 	// --------------------------------------------------------------
@@ -64,11 +46,5 @@ public class ShipAnimation : MonoBehaviour {
 	{
 		propellerLeft.transform.Rotate(Vector3.up, Time.deltaTime * 100000);
 		propellerRight.transform.Rotate(Vector3.up, Time.deltaTime * 100000);
-	}
-	
-	// Slow down.
-	void rotateLeft()
-	{
-		
 	}
 }
