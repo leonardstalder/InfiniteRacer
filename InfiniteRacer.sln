@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{687943E8-9490-2599-2A28-0F16578D7993}") = "InfiniteRacer", "Assembly-CSharp.csproj", "{710E79A8-9FF6-3A91-83A9-B9C4BA1148ED}"
 EndProject
+Project("{687943E8-9490-2599-2A28-0F16578D7993}") = "InfiniteRacer", "Assembly-CSharp-Editor.csproj", "{30018DD7-B995-C2F6-D279-A0CE4468F197}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +15,15 @@ Global
 		{710E79A8-9FF6-3A91-83A9-B9C4BA1148ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{710E79A8-9FF6-3A91-83A9-B9C4BA1148ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{710E79A8-9FF6-3A91-83A9-B9C4BA1148ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30018DD7-B995-C2F6-D279-A0CE4468F197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30018DD7-B995-C2F6-D279-A0CE4468F197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30018DD7-B995-C2F6-D279-A0CE4468F197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30018DD7-B995-C2F6-D279-A0CE4468F197}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																											GlobalSection(MonoDevelopProperties) = preSolution
+																																																	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

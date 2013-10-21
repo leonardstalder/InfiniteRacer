@@ -3,14 +3,15 @@ using System.Collections;
 
 public class NavigationBehaviour : MonoBehaviour {
 	
-	
-	// Use this for initialization
-	void Start () {
-	
+	public string splineName;
+	//should be rdonly
+	public Spline spline;
+
+	void Awake(){
+		spline=GameObject.FindWithTag("Splines").transform.Find(splineName).GetComponent<Spline>();
 	}
 	
-	// Update is called once per frame
 	protected virtual void Update () {
-		transform.Translate(Vector3.back * (NavigationController.speed*Time.deltaTime));
+		
 	}
 }
