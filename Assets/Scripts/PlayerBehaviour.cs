@@ -10,6 +10,8 @@ public class PlayerBehaviour : MonoBehaviour {
 	public float maxSpeed=2f;
 	public float acceleration=1f;
 	public float deceleration=1f;
+	//public static float horizontalSpeed=200f;
+	
 	
 	
 	// Use this for initialization

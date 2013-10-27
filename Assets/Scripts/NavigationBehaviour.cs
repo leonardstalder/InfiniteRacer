@@ -8,7 +8,7 @@ public class NavigationBehaviour : MonoBehaviour {
 	public Spline spline;
 
 	void Awake(){
-		spline=GameObject.FindWithTag("Splines").transform.Find(splineName).GetComponent<Spline>();
+		//spline=GameObject.FindWithTag("Splines").transform.Find(splineName).GetComponent<Spline>();
 	}
 	
 	protected virtual void Update () {
