@@ -1,9 +1,10 @@
 using UnityEngine;
-using System.Collections;
 
+/*
+ * Author: Arnaud Durand
+ */
 public class NavigationController : MonoBehaviour {
 	
-	//public static float blockSize=400f;
 	public static float speed=120f;
 	
 	private float splinePosition=0f;
@@ -14,12 +15,7 @@ public class NavigationController : MonoBehaviour {
 
 	public Transform block0Prefab;
 	public Transform block45Prefab;
-	//public Transform obstacleUPrefab;
-	//public Transform obstacleDPrefab;
-	//public Transform obstacleMPrefab;
 	public Transform Player;
-	
-	//private float lastObstacleTime;
 	
 	void RespawnBlocks(){
 		Destroy(blocks[blockIndex].gameObject);
@@ -33,7 +29,7 @@ public class NavigationController : MonoBehaviour {
 	
 	/*
 	 * TODO: Spawn obstacles as blocks children
-	 * */
+	 */
 	void SpawnObstacles(){
 	}
 	
@@ -52,8 +48,6 @@ public class NavigationController : MonoBehaviour {
 			nextOrientation=nextSpline.GetOrientationOnSpline(1f);
 			blocks[i].parent=transform;
 		}
-		
-		//lastObstacleTime=Time.time;
 	}
 	
 	void Update () {
@@ -62,7 +56,6 @@ public class NavigationController : MonoBehaviour {
 		
 		if (splinePosition>1f){
 			float exceedingDistance=(splinePosition%1)*spline.splineLength;
-			//Vector3 sOffset=-blocks[blockIndex].position+(Vector3.zero-spline.GetPositionOnSpline(1f));
 			Vector3 sOffset=-spline.GetPositionOnSpline(1f);
 			foreach (Transform t in blocks){
       	      t.position+=sOffset;
@@ -74,17 +67,11 @@ public class NavigationController : MonoBehaviour {
 		}
 		
 		//SpawnObstacles();
-		//Vector3 offset=-blocks[blockIndex].position+(Vector3.zero-spline.GetPositionOnSpline(splinePosition));
 		Vector3 offset=-spline.GetPositionOnSpline(splinePosition);
 		foreach (Transform t in blocks){
             t.position+=offset;
         }
 		Player.rotation=spline.GetOrientationOnSpline(splinePosition);
 	}
-	
-	
-	/*void LateUpdate(){
-		RespawnBlocks();
-	}*/
 	
 }

@@ -12,16 +12,13 @@ public class PlayerBehaviour : MonoBehaviour {
 	public float deceleration=1f;
 	//public static float horizontalSpeed=200f;
 	
-	
-	
-	// Use this for initialization
 	void Start () {
 		transform.position=new Vector3(0,-radius,depth);
 		Camera.main.transform.position=Vector3.down*cameraRadius;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void LateUpdate () {
 		
 		if (Input.GetKey ("left")&&(speed > -maxSpeed))
 			speed = speed - acceleration * Time.deltaTime;
