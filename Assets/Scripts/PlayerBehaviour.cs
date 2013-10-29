@@ -45,7 +45,9 @@ public class PlayerBehaviour : MonoBehaviour {
 		//transform.RotateAround (Vector3.zero, Vector3.forward, motion * 360);
 		
 		transform.position=ring.GetPositionOnSpline(positionOnRing%1);
-		//transform.rotation=ring.GetOrientationOnSpline(motion%1);
+		transform.rotation=ring.GetOrientationOnSpline(positionOnRing%1);
+		
+		
 		//Camera.main.transform.transform.RotateAround (Vector3.zero, Vector3.forward, motion * 360);
 	}
 		
