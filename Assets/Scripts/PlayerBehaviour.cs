@@ -10,6 +10,9 @@ public class PlayerBehaviour : MonoBehaviour {
 	public float maxSpeed=2f;
 	public float acceleration=1f;
 	public float deceleration=1f;
+	
+	public Spline ring;
+	private float positionOnRing=0f;
 	//public static float horizontalSpeed=200f;
 	
 	void Start () {
@@ -37,9 +40,13 @@ public class PlayerBehaviour : MonoBehaviour {
 		
 		//better use rotate around API
 		//transform.position=new Vector3(Mathf.Sin(relativePlayerPosition*Mathf.PI)*radius,-Mathf.Cos(relativePlayerPosition*Mathf.PI)*radius,transform.position.z);
-		transform.RotateAround (Vector3.zero, Vector3.forward, motion * 360);
 		
-		Camera.main.transform.transform.RotateAround (Vector3.zero, Vector3.forward, motion * 360);
+		positionOnRing+=motion;
+		//transform.RotateAround (Vector3.zero, Vector3.forward, motion * 360);
+		
+		transform.position=ring.GetPositionOnSpline(positionOnRing%1);
+		//transform.rotation=ring.GetOrientationOnSpline(motion%1);
+		//Camera.main.transform.transform.RotateAround (Vector3.zero, Vector3.forward, motion * 360);
 	}
 		
 }
