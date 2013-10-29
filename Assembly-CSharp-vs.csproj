@@ -47,6 +47,7 @@
      <Compile Include="Assets\Scripts\NavigationBehaviour.cs" />
      <Compile Include="Assets\Scripts\NavigationController.cs" />
      <Compile Include="Assets\Scripts\ObstacleBehaviour.cs" />
+     <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\PlayerBehaviour.cs" />
      <Compile Include="Assets\Scripts\ShipAnimator.cs" />
      <Compile Include="Assets\Scripts\SuperSplines\Spline.cs" />
