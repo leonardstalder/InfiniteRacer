@@ -16,8 +16,8 @@ public class PlayerBehaviour : MonoBehaviour {
 	//public static float horizontalSpeed=200f;
 	
 	void Start () {
-		transform.position=new Vector3(0,-radius,depth);
-		Camera.main.transform.position=Vector3.down*cameraRadius;
+		//transform.position=new Vector3(0,-radius,depth);
+		//Camera.main.transform.position=Vector3.down*cameraRadius;
 	}
 	
 	// Update is called once per frame
@@ -37,18 +37,12 @@ public class PlayerBehaviour : MonoBehaviour {
 		}
 		
 		float motion=speed * Time.deltaTime;
+		positionOnRing+=motion;		
+		positionOnRing=(positionOnRing+1)%1;
 		
-		//better use rotate around API
-		//transform.position=new Vector3(Mathf.Sin(relativePlayerPosition*Mathf.PI)*radius,-Mathf.Cos(relativePlayerPosition*Mathf.PI)*radius,transform.position.z);
-		
-		positionOnRing+=motion;
-		//transform.RotateAround (Vector3.zero, Vector3.forward, motion * 360);
-		
-		transform.position=ring.GetPositionOnSpline(positionOnRing%1);
-		transform.rotation=ring.GetOrientationOnSpline(positionOnRing%1);
-		
-		
-		//Camera.main.transform.transform.RotateAround (Vector3.zero, Vector3.forward, motion * 360);
+		transform.position=ring.GetPositionOnSpline(positionOnRing);
+		transform.Rotate(new Vector3(0f, 0f, motion*360),Space.Self);
+		//transform.rotation=ring.GetOrientationOnSpline(positionOnRing);
 	}
 		
 }

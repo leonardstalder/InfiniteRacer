@@ -44,10 +44,18 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\SuperSplines\Editor\SplineControlNodeInspector.cs" />
-     <Compile Include="Assets\Scripts\SuperSplines\Editor\SplineInspector.cs" />
-     <Compile Include="Assets\Scripts\SuperSplines\Editor\SplineMeshInspector.cs" />
+     <Compile Include="Assets\SuperSplinesPro\Scripts\Design\Editor\SplineAutoAlignInspector.cs" />
+     <Compile Include="Assets\SuperSplinesPro\SuperSplines\Editor\BranchingSplineInspector.cs" />
+     <Compile Include="Assets\SuperSplinesPro\SuperSplines\Editor\SplineEditor.cs" />
+     <Compile Include="Assets\SuperSplinesPro\SuperSplines\Editor\SplineEditorInspector.cs" />
+     <Compile Include="Assets\SuperSplinesPro\SuperSplines\Editor\SplineEditorScene.cs" />
+     <Compile Include="Assets\SuperSplinesPro\SuperSplines\Editor\SplineMeshInspector.cs" />
+     <Compile Include="Assets\SuperSplinesPro\SuperSplines\Editor\SplineNodeInspector.cs" />
+     <Compile Include="Assets\SuperSplinesPro\SuperSplines\Editor\_CustomDrawers\CustomArrayDrawer.cs" />
+     <Compile Include="Assets\SuperSplinesPro\SuperSplines\Editor\_EditorUtilities\EditorGUILayoutUtilities.cs" />
+     <Compile Include="Assets\SuperSplinesPro\SuperSplines\Editor\_EditorUtilities\InstantInspector.cs" />
      <None Include="Assets\Shaders\UnlitColorOnly.shader" />
+     <None Include="Assets\SuperSplinesPro\ReadMe.txt" />
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:\Program Files (x86)\Unity\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
  </Reference>

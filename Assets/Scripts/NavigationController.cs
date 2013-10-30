@@ -15,6 +15,8 @@ public class NavigationController : MonoBehaviour {
 
 	public Transform block0Prefab;
 	public Transform block45Prefab;
+	
+	public Transform Ring;
 	public Transform Player;
 	
 	void RespawnBlocks(){
@@ -52,10 +54,10 @@ public class NavigationController : MonoBehaviour {
 	
 	void Update () {
 		Spline spline=blocks[blockIndex].GetComponent<Spline>();
-		splinePosition+=(speed*Time.deltaTime)/spline.splineLength;
+		splinePosition+=(speed*Time.deltaTime)/spline.Length;
 		
 		if (splinePosition>1f){
-			float exceedingDistance=(splinePosition%1)*spline.splineLength;
+			float exceedingDistance=(splinePosition%1)*spline.Length;
 			Vector3 sOffset=-spline.GetPositionOnSpline(1f);
 			foreach (Transform t in blocks){
       	      t.position+=sOffset;
@@ -63,7 +65,7 @@ public class NavigationController : MonoBehaviour {
 			RespawnBlocks();
 			//Warning: blockIndex changed
 			spline=blocks[blockIndex].GetComponent<Spline>();
-			splinePosition=exceedingDistance/spline.splineLength;
+			splinePosition=exceedingDistance/spline.Length;
 		}
 		
 		//SpawnObstacles();
@@ -71,6 +73,8 @@ public class NavigationController : MonoBehaviour {
 		foreach (Transform t in blocks){
             t.position+=offset;
         }
+		
+		Ring.rotation=spline.GetOrientationOnSpline(splinePosition);
 		Player.rotation=spline.GetOrientationOnSpline(splinePosition);
 	}
 	
