@@ -22,7 +22,8 @@ public class PauseMenu : MonoBehaviour {
 		height = (Screen.height / 2);
 	}
 	
-	void Update () {
+	void Update () 
+	{
 		if(Input.GetKeyDown(KeyCode.Escape) && paused == false)
 		{
 			paused = true;
@@ -36,7 +37,8 @@ public class PauseMenu : MonoBehaviour {
 		}
 	}
 	
-	void OnGUI () {
+	void OnGUI () 
+	{
 		if(paused)
 		{
 			// Put background image.
