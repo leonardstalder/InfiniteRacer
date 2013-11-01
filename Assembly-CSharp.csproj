@@ -78,6 +78,7 @@
      <Compile Include="Assets\SuperSplinesPro\SuperSplinesSamples\SampleAssets\Scripts\NodeCreator.cs" />
      <Compile Include="Assets\SuperSplinesPro\SuperSplinesSamples\SampleAssets\Scripts\VectorArrayInterpolation.cs" />
      <None Include="Assets\Shaders\UnlitColorOnly.shader" />
+     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\SuperSplinesPro\ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
