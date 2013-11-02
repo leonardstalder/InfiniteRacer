@@ -1,14 +1,14 @@
 using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof (Spline))]
 public class NavigationBehaviour : MonoBehaviour {
 	
-	public string splineName;
-	//should be rdonly
 	public Spline spline;
 
+
 	void Awake(){
-		//spline=GameObject.FindWithTag("Splines").transform.Find(splineName).GetComponent<Spline>();
+		spline=GetComponent<Spline>();
 	}
 	
 	protected virtual void Update () {
