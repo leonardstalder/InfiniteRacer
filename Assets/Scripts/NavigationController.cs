@@ -25,6 +25,7 @@ public class NavigationController : MonoBehaviour {
 		Spline previousSpline=blocks[prvIdx].GetComponent<Spline>();
 		
 		blocks[blockIndex]=Instantiate((Random.value>0.5)?block0Prefab:block45Prefab, previousSpline.GetPositionOnSpline(1f), previousSpline.GetOrientationOnSpline(1f)) as Transform;
+		blocks[blockIndex].Rotate(new Vector3(0,0,Random.Range(0,360)),Space.Self);
 		blocks[blockIndex].parent=transform;
 		blockIndex=(blockIndex+1)%blocks.Length;
 	}
