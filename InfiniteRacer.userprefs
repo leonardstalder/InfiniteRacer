@@ -1,7 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NavigationController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\Camera Scripts\SmoothFollow.js">
     <Files>
+      <File FileName="Assets\Standard Assets\Scripts\Camera Scripts\SmoothFollow.js" Line="15" Column="17" />
       <File FileName="Assets\Scripts\NavigationController.cs" Line="9" Column="2" />
       <File FileName="Assets\Scripts\NavigationBehaviour.cs" Line="11" Column="33" />
     </Files>
