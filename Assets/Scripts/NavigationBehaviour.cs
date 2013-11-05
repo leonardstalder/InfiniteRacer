@@ -4,14 +4,17 @@ using System.Collections;
 [RequireComponent(typeof (Spline))]
 public class NavigationBehaviour : MonoBehaviour {
 	
-	public Spline spline;
-
-
-	void Awake(){
-		spline=GetComponent<Spline>();
+	public Spline spline
+	{
+		get {return GetComponent<Spline>();}
 	}
 	
-	protected virtual void Update () {
+	public float torque=0f;
+	
+	/*
+	 * TODO: Spawn obstacles as blocks children
+	 */
+	protected virtual void SpawnObstacles () {
 		
 	}
 }
