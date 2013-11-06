@@ -25,7 +25,7 @@ public class Loader : MonoBehaviour {
 		// Put background image.
 		GUI.DrawTexture (new Rect(0,0,Screen.width,Screen.height), loadingTexture, ScaleMode.StretchToFill);
 
-		if(GUI.Button (new Rect (Screen.width/2 - 125, Screen.height/2 -20,250,30), "Press Enter"))
+		if(GUI.Button (new Rect (Screen.width/2 - 75, Screen.height -50,150,20), "Start"))
 		{
 			Time.timeScale = 1;
 			Destroy (gameObject);
