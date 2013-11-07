@@ -1,8 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Loader.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\Camera Scripts\SmoothFollow.js">
     <Files>
-      <File FileName="Assets\Scripts\Loader.cs" Line="25" Column="27" />
+      <File FileName="Assets\Standard Assets\Scripts\Camera Scripts\SmoothFollow.js" Line="25" Column="84" />
+      <File FileName="Assets\Scripts\PlayerBehaviour.cs" Line="51" Column="46" />
+      <File FileName="Assets\Scripts\ShipAnimator.cs" Line="12" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

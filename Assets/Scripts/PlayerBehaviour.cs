@@ -10,6 +10,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	public float maxSpeed=1f;
 	public float acceleration=2f;
 	public float deceleration=2f;
+	bool ft = false;
 	public Spline ring;
 	private float positionOnRing=0f;
 
@@ -23,33 +24,36 @@ public class PlayerBehaviour : MonoBehaviour {
 	
 	void Start () {
 		//transform.position=new Vector3(0,-radius,depth);
-		//Camera.main.transform.position=Vector3.down*cameraRadius;
 		
+
 	}
 		
 	// Update is called once per frame
 	
 	void LateUpdate () {
-		if(Input.anyKey){		
-			if (Input.GetKey ("left")&&(speed > -maxSpeed))
-				speed = speed - acceleration * Time.deltaTime;
-			else if (Input.GetKey ("right")&&(speed < maxSpeed))
-				speed = speed + acceleration * Time.deltaTime;
-			else {
-				if(speed > deceleration * Time.deltaTime)
-					speed = speed - deceleration * Time.deltaTime;
-				else speed = speed + deceleration * Time.deltaTime;
-			}
+		
+		if (Input.GetKey ("left")&&(speed > -maxSpeed))
+       		speed = speed - acceleration * Time.deltaTime;
+     	else if (Input.GetKey ("right")&&(speed < maxSpeed))
+       		speed = speed + acceleration * Time.deltaTime;
+     	else {
+       		if(speed > deceleration * Time.deltaTime)
+         		speed = speed - deceleration * Time.deltaTime;
+       		else if(speed < -deceleration * Time.deltaTime)
+         		speed = speed + deceleration * Time.deltaTime;
+       		else
+        	 speed = 0;
 		}
-	/*
-		else if (positionOnRing == 0)
-			speed = 0;
-		else if(positionOnRing > 0.01 && positionOnRing <= 0.5)
-			speed = -4f * (positionOnRing * positionOnRing);
-				else if (positionOnRing > 0.5 && positionOnRing < 0.99)
-			speed = 4f * (1f - positionOnRing) * (1f - positionOnRing);
-		else speed = 0;
-	*/
+		
+		//Camera.main.transform.position=Vector3.back*speed*10;
+		
+
+			Camera.main.transform.Translate(speed,0,0);
+			//Camera.main.transform.position=Vector3.back*50;
+		
+		
+		//Camera.main.transform.position=Vector3.back*50;
+		
 		float motion=speed * Time.deltaTime;
 		
 		motion+=shiftAmount;
